@@ -24,13 +24,13 @@ export function isValidCard(value) {
       if (cardNumber && !isValidCard(`${cardNumber}`)) {
           return {
             success: false,
-            message: 'card is invalid',
+            message: 'Card number is invalid, Please try different',
           }
       }
       if (limit && (limit < 0)) {
         return {
             success: false,
-            message: 'limit is invalid',
+            message: 'Card limit must be positive',
           }
       }
       return {

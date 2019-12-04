@@ -29,7 +29,7 @@ const cards = (app) => {
       db.push(card);
       return res.status(201).send({
         success: true,
-        message: 'card added successfully',
+        message: 'Card added successfully',
         card
       })
     });

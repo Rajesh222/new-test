@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {ToastsContainer, ToastsStore, ToastsContainerPosition} from 'react-toasts';
 import CardList from '../CardList';
 import {baseUrl} from '../../config';
 
@@ -39,15 +40,20 @@ class CardForm extends Component {
         fetch(url, options)
             .then(res => res.json())
             .then(res => { 
-                this.setState({
-                    name: '',
-                    cardNumber: '',
-                    limit: '',
-                    balance: '',
-                });
-                this.getAllCards();
+                if (res.success) {
+                    this.setState({
+                        name: '',
+                        cardNumber: '',
+                        limit: '',
+                        balance: '',
+                    });
+                    ToastsStore.success(res.message);
+                    this.getAllCards();
+                } else {
+                    ToastsStore.error(res.message);
+                }
             }).catch((err) => {
-                this.setState({isError: true});
+                ToastsStore.error("Something went wrong!!");
             });
     }
     handleChannge = (e) => {
@@ -81,7 +87,11 @@ class CardForm extends Component {
         const url =  `${baseUrl}/cards`;   
         fetch(url)
             .then(res => res.json())
-            .then(res => this.setState({allCardList: res.cards}));
+            .then(res => {
+                this.setState({allCardList: res.cards});
+                }).catch((err) => {
+                    ToastsStore.error("Something went wrong!!");
+                });
     }
     render() {
         const { name, cardNumber, limit, balance, allCardList } = this.state;
@@ -109,6 +119,7 @@ class CardForm extends Component {
                     </div>
                 </form> 
                 <CardList allCardList={allCardList} />
+                <ToastsContainer store={ToastsStore} position={ToastsContainerPosition.TOP_CENTER}/>
             </div>
         );
     }

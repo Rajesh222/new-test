@@ -18,12 +18,12 @@ class CardList extends Component {
     const { allCardList } = this.props;
     return (
       <div className="list">
-         <div className="card-list header">
+         {allCardList.length > 0 &&  <div className="card-list header">
             <div className="item">Name</div>
             <div className="item">Card Number</div>
             <div className="item">Balance</div>
             <div className="item">Limit</div>
-          </div>
+          </div>}
            {allCardList.length > 0 && this.renderCardlist()}
       </div>
     );
