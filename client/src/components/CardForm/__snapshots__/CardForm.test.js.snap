@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CardForm component has card-form classname 1`] = `ReactWrapper {}`;
+
+exports[`CardForm component renders correctly 1`] = `ShallowWrapper {}`;

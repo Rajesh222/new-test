@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import CardList from './CardList';
-import {baseUrl} from '../config';
+import CardList from '../CardList';
+import {baseUrl} from '../../config';
 
 class CardForm extends Component {
     constructor(props) {

@@ -5,7 +5,7 @@ class CardList extends Component {
     const { allCardList } = this.props;
    return allCardList.map((item)=>{
       return (
-        <div className="card-list">
+        <div className="card-list" key={item.id}>
           <div className="item">{item.name}</div>
           <div className="item">{item.cardNumber}</div>
           <div className="item">$ {item.balance}</div>

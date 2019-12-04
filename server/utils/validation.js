@@ -1,4 +1,4 @@
-function isValidCard(value) {
+export function isValidCard(value) {
     // Accept only digits, dashes or spaces
         if (/[^0-9-\s]+/.test(value)) return false;
 
