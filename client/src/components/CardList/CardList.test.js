@@ -1,11 +1,11 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import CardList from './index';
 
 describe('CardList component', () => {
   it('renders correctly', () => {
     const allCardList = [];
-    const wrapper = shallow(<CardList allCardList={allCardList} />);
+    const wrapper = mount(<CardList allCardList={allCardList} />);
     expect(wrapper).toMatchSnapshot();
   });
 

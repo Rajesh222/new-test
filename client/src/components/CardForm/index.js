@@ -14,7 +14,6 @@ class CardForm extends Component {
       name: '',
       cardNumber: '',
       limit: '',
-      balance: '',
       allCardList: [],
       isError: false
     };
@@ -25,14 +24,13 @@ class CardForm extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    const { name, cardNumber, limit, balance } = this.state;
+    const { name, cardNumber, limit } = this.state;
     const data = {
       name,
       cardNumber,
-      limit,
-      balance
+      limit
     };
-    if (!name && !cardNumber && !limit && !balance) {
+    if (!name && !cardNumber && !limit) {
       return;
     }
     const options = {
@@ -51,8 +49,7 @@ class CardForm extends Component {
           this.setState({
             name: '',
             cardNumber: '',
-            limit: '',
-            balance: ''
+            limit: ''
           });
           ToastsStore.success(res.message);
           this.getAllCards();
@@ -103,10 +100,11 @@ class CardForm extends Component {
       });
   };
   render() {
-    const { name, cardNumber, limit, balance, allCardList } = this.state;
+    const { name, cardNumber, limit, allCardList } = this.state;
     return (
       <div className='card-form'>
         <h4>Credit Card System</h4>
+        <h5>Add</h5>
         <form onSubmit={this.handleSubmit}>
           <div className='control-input'>
             Name:
@@ -137,17 +135,6 @@ class CardForm extends Component {
               type='text'
               name='limit'
               value={limit}
-              onChange={this.handleChannge}
-              required
-            />
-          </div>
-          <div className='control-input'>
-            Balance:
-            <br />
-            <input
-              type='text'
-              name='balance'
-              value={balance}
               onChange={this.handleChannge}
               required
             />

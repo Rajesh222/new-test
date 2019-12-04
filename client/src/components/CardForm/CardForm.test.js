@@ -1,10 +1,10 @@
 import React from 'react';
-import { mount, shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import CardForm from './index';
 
 describe('CardForm component', () => {
   it('renders correctly', () => {
-    const wrapper = shallow(<CardForm />);
+    const wrapper = mount(<CardForm />);
     expect(wrapper).toMatchSnapshot();
   });
 

@@ -10,7 +10,7 @@ const cards = app => {
   });
 
   app.post('/api/v1/cards', (req, res) => {
-    const { name, cardNumber, limit, balance } = req.body;
+    const { name, cardNumber, limit } = req.body;
     const validationObj = isValid(req);
     if (!validationObj.success) {
       return res.status(400).send({
@@ -23,7 +23,7 @@ const cards = app => {
       name,
       cardNumber,
       limit,
-      balance
+      balance: 0
     };
     db.push(card);
     return res.status(201).send({

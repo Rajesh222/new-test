@@ -2,6 +2,6 @@
 
 exports[`CardList component has list classname 1`] = `ShallowWrapper {}`;
 
-exports[`CardList component renders correctly 1`] = `ShallowWrapper {}`;
+exports[`CardList component renders correctly 1`] = `ReactWrapper {}`;
 
 exports[`CardList component should have eqaual number of credit card number record 1`] = `ShallowWrapper {}`;
