@@ -4,8 +4,8 @@ import CardForm from './components/CardForm';
 
 function App() {
   return (
-    <div className="main">
-       <CardForm />  
+    <div className='main'>
+      <CardForm />
     </div>
   );
 }

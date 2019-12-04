@@ -1,3 +1,3 @@
-const cards =  [];
+const cards = [];
 
 export default cards;
