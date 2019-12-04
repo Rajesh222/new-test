@@ -12,7 +12,7 @@ In the project directory, Please run below command to install all the dependenci
 ### `npm install`
 
 Please run below command to install all the dependencies of client side code:
-### `npm installclient`
+### `npm run installclient`
 
 Please run below command to build client side code:
 ### `npm run buildclient`
